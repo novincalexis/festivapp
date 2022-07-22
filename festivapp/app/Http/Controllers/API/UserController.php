@@ -20,10 +20,10 @@ class UserController extends Controller
 
         if(Auth::attempt($credentials)) {
             $success = true;
-            $message = "User login successfully";
+            $message = "Utilisateur connecté";
         } else {
             $success = false;
-            $message = "Unautorised";
+            $message = "Accès refusé";
         }
 
         $response = [
@@ -45,7 +45,7 @@ class UserController extends Controller
             $user->save();
 
             $success = true;
-            $message = "User register successfully";
+            $message = "Inscription réussie";
 
         } catch (\Illuminate\Database\QueryException $ex) {
             $success = false;
@@ -67,7 +67,7 @@ class UserController extends Controller
         try {
             Session::flush();
             $success = true;
-            $message = "Logout successfully";
+            $message = "Deconnecté";
         } catch (\Illuminate\Database\QueryException $ex) {
             $success = false;
             $message = $ex->getMessage();

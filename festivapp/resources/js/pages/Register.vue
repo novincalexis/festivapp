@@ -17,7 +17,7 @@
                                 <label for="name" class="col-sm-4 col-form-label text-md-right">Nom</label>
                                 <div class="col-md-8">
                                     <input id="name" type="text" class="form-control" v-model="name" required
-                                           autofocus autocomplete="off"  placeholder="Enter your name">
+                                           autofocus autocomplete="off"  placeholder="Entrer votre prenom">
                                 </div>
                             </div>
 
@@ -25,7 +25,7 @@
                                 <label for="email" class="col-sm-4 col-form-label text-md-right">Adresse mail</label>
                                 <div class="col-md-8">
                                     <input id="email" type="email" class="form-control" v-model="email" required
-                                           autofocus autocomplete="off" placeholder="Enter your email">
+                                           autofocus autocomplete="off" placeholder="Entrer votre mail">
                                 </div>
                             </div>
 
@@ -34,7 +34,7 @@
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Mot de passe</label>
                                 <div class="col-md-8">
                                     <input id="password" type="password" class="form-control" v-model="password"
-                                           required autocomplete="off" placeholder="Enter your password">
+                                           required autocomplete="off" placeholder="Entrer votre mot de passe">
                                 </div>
                             </div>
 
@@ -50,7 +50,7 @@
                                 <div class="col-md-8 offset-md-4">
                                     <small class="text-muted">
                                         Vous avez un compte ? 
-                                        <router-link to="/login" >login</router-link>
+                                        <router-link to="/login" >Connexion</router-link>
                                     </small>
                                 </div>
                             </div>

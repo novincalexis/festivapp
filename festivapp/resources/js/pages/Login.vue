@@ -16,7 +16,7 @@
                                 <label for="email" class="col-sm-4 col-form-label text-md-right">Adresse mail</label>
                                 <div class="col-md-8">
                                     <input id="email" type="email" class="form-control" v-model="email" required
-                                           autofocus autocomplete="off" placeholder="Enter your email">
+                                           autofocus autocomplete="off" placeholder="Entrer votre email">
                                 </div>
                             </div>
 
@@ -25,7 +25,7 @@
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Mot de passe</label>
                                 <div class="col-md-8">
                                     <input id="password" type="password" class="form-control" v-model="password"
-                                           required autocomplete="off" placeholder="Enter your password">
+                                           required autocomplete="off" placeholder="Entrer votre mot de passe">
                                 </div>
                             </div>
 
