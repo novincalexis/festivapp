@@ -6,13 +6,13 @@
                 aria-expanded="false" aria-label="Toggle navigation"></button>
             <div class="navbar-nav" v-if="isLoggedIn">
                 <router-link to="/dashboard" class="nav-item nav-link">Dashboard</router-link>
-                <router-link to="/posts" class="nav-item nav-link">Posts</router-link>
-                <a class="nav-item nav-link" style="cursor: pointer;" @click="logout">Logout</a>
+                <router-link to="/posts" class="nav-item nav-link">Festivals</router-link>
+                <a class="nav-item nav-link" style="cursor: pointer;" @click="logout">Deconnexion</a>
             </div>
             <div class="navbar-nav" v-else>
-                <router-link to="/" class="nav-item nav-link">Home</router-link>
-                <router-link to="/login" class="nav-item nav-link">Login</router-link>
-                <router-link to="/register" class="nav-item nav-link">Register</router-link>
+                <router-link to="/" class="nav-item nav-link">Accueil</router-link>
+                <router-link to="/login" class="nav-item nav-link">Connexion</router-link>
+                <router-link to="/register" class="nav-item nav-link">Inscription</router-link>
             </div>
         </nav>
 

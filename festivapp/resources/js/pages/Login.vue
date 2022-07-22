@@ -9,11 +9,11 @@
                 </div>
                 
                 <div class="card card-default">
-                    <div class="card-header"><h5>Login</h5></div>
+                    <div class="card-header"><h5>Connexion</h5></div>
                     <div class="card-body">
                         <form>
                             <div class="form-group row">
-                                <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
+                                <label for="email" class="col-sm-4 col-form-label text-md-right">Adresse mail</label>
                                 <div class="col-md-8">
                                     <input id="email" type="email" class="form-control" v-model="email" required
                                            autofocus autocomplete="off" placeholder="Enter your email">
@@ -22,7 +22,7 @@
 
 
                             <div class="form-group row mt-1">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Mot de passe</label>
                                 <div class="col-md-8">
                                     <input id="password" type="password" class="form-control" v-model="password"
                                            required autocomplete="off" placeholder="Enter your password">
@@ -32,7 +32,7 @@
                             <div class="form-group row mt-1 mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-success" @click="handleSubmit">
-                                        Login
+                                        Connexion
                                     </button>
                                 </div>
                             </div>
@@ -40,8 +40,8 @@
                             <div class="row mt-1">
                                 <div class="col-md-8 offset-md-4">
                                     <small class="text-muted">
-                                        Don't have any account yet? Please 
-                                        <router-link to="/register" >Register</router-link>
+                                        Vous n'avez pas de compte ? 
+                                        <router-link to="/register" >Inscription</router-link>
                                     </small>
                                 </div>
                             </div>

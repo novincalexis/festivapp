@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        Wellcome, this page will show to all user
+        Voici tous les festivals
     </div>
 </template>
 

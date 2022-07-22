@@ -1,6 +1,6 @@
 <template>
     <div>
-        Welcome {{ name }}
+        Bonjour {{ name }}
     </div>
 </template>
 
