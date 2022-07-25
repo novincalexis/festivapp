@@ -1,6 +1,31 @@
 <template>
     <div class="container">
-        <div class="row jutify-content-center">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <h2>Tu nous as manqué !</h2>
+                <p>Plus de 200 festivals attendent que tu en découvre plus sur eux !</p>
+                <form>
+                    <div class="input-text email">
+                        <input id="email" type="email" class="form-control" v-model="email" required
+                                           autofocus autocomplete="off" placeholder="Email">
+                        <!--<span>Email</span>-->
+                    </div>
+                    <div class="input-text password">
+                        <input id="password" type="password" class="form-control" v-model="password" required
+                                           autofocus autocomplete="off" placeholder="Mot de passe">
+                        <!--<span>Mot de passe</span>-->
+                    </div>
+                    <button type="submit" class="btn btn-success" @click="handleSubmit">
+                        Connexion
+                    </button>
+                    <p>
+                        Vous n'avez pas de compte ?
+                        <router-link to="/register">Inscription</router-link>
+                    </p>
+                </form>    
+            </div>
+        </div>
+        <!--<div class="row jutify-content-center">
             <div class="col-md-8">
                 <div v-if="error !== null" class="alert alert-danger alert-dismissible fade show" role="alert">
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -52,7 +77,7 @@
                 </div>
                 
             </div>
-        </div>
+        </div>-->
     </div>
 </template>
 
