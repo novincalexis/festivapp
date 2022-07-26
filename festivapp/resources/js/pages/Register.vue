@@ -1,5 +1,38 @@
 <template>
-    <div class="container">
+    <div class="container register">
+        <img src="/img/joey-thompson-4zN_-PKsbWw-unsplash.jpg" alt="">
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <h2>Tu nous as manqué !</h2>
+                <p>Plus de 200 festivals attendent que tu en découvre plus sur eux !</p>
+                <form>
+                    <div class="input-text name">
+                        <input id="name" type="name" class="form-control" v-model="email" required
+                                           autofocus autocomplete="off" placeholder="Nom">
+                        <!--<span>Email</span>-->
+                    </div>
+                    <div class="input-text email">
+                        <input id="email" type="email" class="form-control" v-model="email" required
+                                           autofocus autocomplete="off" placeholder="Email">
+                        <!--<span>Email</span>-->
+                    </div>
+                    <div class="input-text password">
+                        <input id="password" type="password" class="form-control" v-model="password" required
+                                           autofocus autocomplete="off" placeholder="Mot de passe">
+                        <!--<span>Mot de passe</span>-->
+                    </div>
+                    <button type="submit" class="btn btn-success" @click="handleSubmit">
+                        Inscription
+                    </button>
+                    <p>
+                        Vous avez déjà un compte ?
+                        <router-link to="/logi ">Connexion</router-link>
+                    </p>
+                </form>    
+            </div>
+        </div>
+    </div>
+    <!--<div class="container">
         <div class="row jutify-content-center">
             <div class="col-md-8">
                 
@@ -62,7 +95,7 @@
 
             </div>
         </div>
-    </div>
+    </div>-->
 </template>
 
 <script>

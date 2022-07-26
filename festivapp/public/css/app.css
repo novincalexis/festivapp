@@ -56,11 +56,6 @@ a {
   font: unset;
 }
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
 h2 {
   font-weight: 900;
   font-size: 30px;
@@ -70,15 +65,23 @@ h2 {
 
 .navbar {
   padding: 20px;
-  max-width: 1400px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  width: 100%;
   margin: 0 auto;
   border-bottom: solid 1px #eaeaea;
   background-color: #fff;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.navbar > div {
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .navbar-brand {
   display: flex;
@@ -120,20 +123,41 @@ h2 {
   background-color: #4f3074;
 }
 
+.login,
+.register {
+  position: relative;
+}
+.login img,
+.register img {
+  position: absolute;
+  height: calc(100vh - 81px);
+  right: 0;
+}
+
 .sidebar {
   padding: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 170px);
+  height: calc(100vh - 81px);
+  min-width: 441px;
   position: fixed;
-  max-width: 30%;
+  max-width: 35%;
+  box-sizing: border-box;
+  background-color: #f8fafc;
 }
 .sidebar p {
   font-weight: 300 !important;
   font-size: 18px;
   line-height: 30px;
   margin-bottom: 20px;
+}
+.sidebar p a {
+  color: #79589f;
+}
+.sidebar p a:hover {
+  color: #4f3074;
+  text-decoration: underline;
 }
 .sidebar-content .input-text {
   border: 1px solid #eaeaea;
@@ -152,6 +176,7 @@ h2 {
   padding: 15px 25px;
   outline: none;
   font-size: 16px;
+  box-sizing: border-box;
 }
 .sidebar-content button {
   outline: none;
@@ -161,6 +186,7 @@ h2 {
   padding: 15px;
   color: white;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 .sidebar-content button:hover {
   background-color: #4f3074;

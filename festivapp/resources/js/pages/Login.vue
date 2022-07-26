@@ -1,5 +1,6 @@
 <template>
-    <div class="container">
+    <div class="container login">
+        <img src="/img/joey-thompson-4zN_-PKsbWw-unsplash.jpg" alt="">
         <div class="sidebar">
             <div class="sidebar-content">
                 <h2>Tu nous as manqué !</h2>
