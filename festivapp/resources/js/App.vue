@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <nav class="navbar">
-            <a class="navbar-brand" href="#"><b>Festiv</b>app</a>
+            <a class="navbar-brand" href="/"><b>Festiv</b>app</a>
             <div class="navbar-nav" v-if="isLoggedIn">
                 <router-link to="/dashboard" class="nav-item nav-link">Dashboard</router-link>
                 <router-link to="/posts" class="nav-item nav-link">Festivals</router-link>
