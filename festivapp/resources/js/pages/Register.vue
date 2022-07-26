@@ -7,7 +7,7 @@
                 <p>Plus de 200 festivals attendent que tu en découvre plus sur eux !</p>
                 <form>
                     <div class="input-text name">
-                        <input id="name" type="name" class="form-control" v-model="email" required
+                        <input id="name" type="name" class="form-control" v-model="name" required
                                            autofocus autocomplete="off" placeholder="Nom">
                         <!--<span>Email</span>-->
                     </div>
