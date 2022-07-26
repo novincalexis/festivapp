@@ -22,6 +22,9 @@
                         Vous n'avez pas de compte ?
                         <router-link to="/register">Inscription</router-link>
                     </p>
+                    <p v-show="error">
+                        Connexion impossible
+                    </p>
                 </form>    
             </div>
         </div>
@@ -108,7 +111,7 @@
                             }
                         })
                         .catch(function (error) {
-                            console.error(error);
+                            this.error = true
                         });
                     })
                 }
