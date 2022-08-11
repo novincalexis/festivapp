@@ -2,8 +2,10 @@
 
 <div class="festlist">
     <h5 class="">Tout les festivals</h5>
+    <input type="text" v-model="search" placeholder="Rechercher">
+
     <div class="cards">
-        <div v-for="(post) in posts" :key="post.id" class="card">
+        <div v-for="(post) in filteredPosts" :key="post.id" class="card">
             <div v-if="post.image" class="card-img">
                 <img alt="post-img" width="100" v-bind:src="'/img/' +post.image">
             </div>
@@ -24,7 +26,8 @@
         name: "Dashboard",
         data() {
             return {
-                posts: []
+                posts: [],
+                search: []
             }
         },
         created() {
@@ -45,6 +48,13 @@
                 window.location.href = "/";
             }
             next();
+        },
+        computed: {
+            filteredPosts: function(){
+                return this.posts.filter((posts) => {
+                    return posts.description.match(this.search) || posts.name.match(this.search);
+                })
+            }
         }
     }
 
