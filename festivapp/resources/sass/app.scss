@@ -140,7 +140,8 @@ h2{
 }
 
 .sidebar{
-    padding: 50px;
+    padding-left: 50px;
+    padding-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -228,4 +229,16 @@ h2{
             }
         }
     }
+}
+
+.content{
+    padding-left: 50px;
+    padding-top: 50px;
+    display: flex;
+    height: calc(100vh - 80px);
+    position: fixed;
+    max-width: 65%;
+    box-sizing: border-box;
+    background-color: #f8fafc;
+    margin-left: 35%;
 }

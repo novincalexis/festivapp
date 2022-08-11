@@ -19,7 +19,7 @@
         </nav>
 
         <div v-if="isLoggedIn" class="sidebar menu">
-            <!--<div>
+            <div>
                 <p>MENU</p>
                 <router-link active-class="active" to="/festivals" exact>
                     <img src="" alt="">
@@ -33,11 +33,12 @@
                     <img src="" alt="">
                     Tops
                 </router-link>
-            </div>-->
+            </div>
         </div>
 
-
-        <router-view></router-view>
+        <div class="content">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 <script>
