@@ -26,7 +26,7 @@
                     </button>
                     <p>
                         Vous avez déjà un compte ?
-                        <router-link to="/logi ">Connexion</router-link>
+                        <router-link to="/login">Connexion</router-link>
                     </p>
                 </form>    
             </div>
