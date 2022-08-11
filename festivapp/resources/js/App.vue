@@ -13,7 +13,7 @@
                         <img src="/img/icon/add-user-svgrepo-com.svg"/>
                         Inscription
                     </router-link>
-                    <router-link to="/login" class="item">Connexion</router-link>
+                    <router-link to="/" class="item">Connexion</router-link>
                 </div>
             </div>
         </nav>
