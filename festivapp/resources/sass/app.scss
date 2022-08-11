@@ -80,6 +80,7 @@ h2{
     background-color: #fff;
     box-sizing: border-box;
     margin: 0 auto;
+    max-height: 80px;
     & > div{
         max-width: 1400px;
         display: flex;
@@ -133,7 +134,7 @@ h2{
     position: relative;
     img{
         position: absolute;
-        height: calc(100vh - 81px);
+        height: calc(100vh - 80px);
         right: 0;
     }
 }
@@ -143,12 +144,42 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 81px);
+    height: calc(100vh - 80px);
     min-width: 441px;
     position: fixed;
     max-width: 35%;
     box-sizing: border-box;
     background-color: $body-bg;
+    &.menu{
+        width: 30%;
+        align-items: flex-start;
+        & > div {
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            p{
+                color: #808080;
+                margin-bottom: 15px;
+            }
+            a{
+                font-weight: bold;
+                color: #000;
+                font-weight: 500;
+                font-size: 16px;
+                padding: 10px 0;
+                &:active{
+                    background-color: #fcf4ec;
+                    color: #fff;
+                }
+
+                img{
+                    width: 20px;
+                    margin-right: 20px;
+
+                }
+            }
+        }
+    }
     p{
         font-weight: 300 !important;
         font-size: 18px;
@@ -191,6 +222,7 @@ h2{
             color: white;
             font-weight: bold;
             margin-bottom: 20px;
+            cursor: pointer;
             &:hover{
                 background-color: $violethover;
             }

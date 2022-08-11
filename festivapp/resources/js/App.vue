@@ -18,6 +18,24 @@
             </div>
         </nav>
 
+        <div v-if="isLoggedIn" class="sidebar menu">
+            <!--<div>
+                <p>MENU</p>
+                <router-link active-class="active" to="/festivals" exact>
+                    <img src="" alt="">
+                    Festivals
+                </router-link>
+                <router-link active-link="active" to="/tags" exact>
+                    <img src="" alt="">
+                    Tags
+                </router-link>
+                <router-link active-class="active" to="/tops" exact>
+                    <img src="" alt="">
+                    Tops
+                </router-link>
+            </div>-->
+        </div>
+
 
         <router-view></router-view>
     </div>
