@@ -1,43 +1,22 @@
 <template>
 
-<div class="card">
-    <div class="card-body">
-        <div class="d-flex justify-content-between pb-2 mb-2">
-            <h5 class="card-title">All Posts Data</h5>
-            <div>
-                <button class="btn btn-success" type="button" @click="this.$router.push('/posts/add')">New Post</button>
+<div class="festlist">
+    <h5 class="">Tout les festivals</h5>
+    <div class="cards">
+        <div v-for="(post) in posts" :key="post.id" class="card">
+            <div v-if="post.image" class="card-img">
+                <img alt="post-img" width="100" v-bind:src="'/img/' +post.image">
+            </div>
+            <div class="card-detail">
+                <p class="name">{{post.name}}</p>
+                <p class="description">{{post.description}}</p>
+                <p class="date">Posté le {{post.created_at}}</p>
+            </div>
+            <div class="card-actions">
+                <router-link :to="{name:'editpost', params: {id:post.id}}"><img width="20" src="/img/icon/crayon.png" /></router-link>
+                <a @click="deletePost(post.id)"><img width="20" src="/img/icon/trash.png" /></a>
             </div>
         </div>
-        
-        <table class="table table-hover table-sm">
-            <thead class="bg-dark text-light">
-                <tr>
-                    <th width="50" class="text-center">#</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th class="text-center" width="120">Image</th>
-                    <th class="text-center" width="200">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(post, index) in posts" :key="post.id">
-                    <td class="text-center">{{index+1}}.</td>
-                    <td>{{post.name}}</td>
-                    <td>{{post.description}}</td>
-                    <td class="text-center">
-                        <div v-if="post.image">
-                            <img alt="post-img" width="100" v-bind:src="'/img/' +post.image">
-                        </div>
-                    </td>
-                    <td class="text-center">
-                        <router-link :to="{name:'editpost', params: {id:post.id}}" class="btn btn-warning">Edit</router-link>
-                        <button class="btn btn-danger" @click="deletePost(post.id)">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-
     </div>
 </div>
 

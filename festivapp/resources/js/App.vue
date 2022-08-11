@@ -4,8 +4,7 @@
             <div>
                 <a class="navbar-brand" href="/"><b>Festiv</b>app</a>
                 <div class="navbar-nav" v-if="isLoggedIn">
-                    <router-link to="/dashboard" class="nav-item nav-link">Dashboard</router-link>
-                    <router-link to="/posts" class="nav-item nav-link">Festivals</router-link>
+                    <a class="item add" type="button" @click="this.$router.push('/posts/add')">+ Nouveau</a>
                     <a class="nav-item nav-link" style="cursor: pointer;" @click="logout">Deconnexion</a>
                 </div>
                 <div class="navbar-nav" v-else>

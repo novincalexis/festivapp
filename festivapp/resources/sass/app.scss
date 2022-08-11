@@ -109,6 +109,10 @@ h2{
             color: #444;
             font-weight: bold;
             transition: $buttontransition;
+            cursor: pointer;
+            &.add{
+                margin-right: 15px;
+            }
             &:hover{
                 background-color: #bbb;
             }
@@ -298,6 +302,17 @@ h2{
         .date{
             font-size: 10px;
             opacity: 0.5;
+        }
+    }
+    &-actions{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        a{
+            &:hover{
+                opacity: 0.3;;
+            }
         }
     }
     @media (max-width:1100px){
