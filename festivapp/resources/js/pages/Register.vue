@@ -26,7 +26,7 @@
                     </button>
                     <p>
                         Vous avez déjà un compte ?
-                        <router-link to="/ ">Connexion</router-link>
+                        <router-link to="/logi ">Connexion</router-link>
                     </p>
                 </form>    
             </div>
@@ -121,7 +121,7 @@
                         })
                         .then(response => {
                             if (response.data.success) {
-                                 window.location.href = "/"
+                                 window.location.href = "/login"
                             } else {
                                 this.error = response.data.message
                             }
