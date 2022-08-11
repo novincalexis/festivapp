@@ -1,38 +1,33 @@
 <template>
 
-    <div class="card">
+    <div class="editcard">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title">Add New Post Data</h5>
-                <div>
-                    <router-link :to="{name: 'posts'}" class="btn btn-success">Go Back</router-link>
+                <div class="back">
+                    <router-link :to="{name: 'posts'}" class="btn btn-success">&#x2190;</router-link>
+                    <h5 class="card-title">Nouveau post</h5>
                 </div>
             </div>
 
             <div v-if="strSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 <strong>{{strSuccess}}</strong>
             </div>
 
             <div v-if="strError" class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 <strong>{{strError}}</strong>
             </div>
 
 
             <form @submit.prevent="addPost" enctype="multipart/form-data">
-                <div class="form-group mb-2">
-                    <label>Name</label><span class="text-danger"> *</span>
-                    <input type="text" class="form-control" v-model="name" placeholder="Enter post name">
+                <div class="input-text">
+                    <input type="text" class="form-control" v-model="name" placeholder="Nom">
                 </div>
 
-                <div class="form-group mb-2">
-                    <label>Name</label><span class="text-danger"> *</span>
-                   <textarea class="form-control" rows="3" v-model="description" placeholder="Enter post description"></textarea>
+                <div class="input-text mb-2">
+                   <textarea class="form-control" rows="3" v-model="description" placeholder="Description"></textarea>
                 </div>
 
-                <div class="form-gorup mb-2">
-                    <label>Image</label><span class="text-danger"> *</span>
+                <div class="input-text form-gorup mb-2">
                     <input type="file" class="form-control mb-2" v-on:change="onChange">
 
                     <div v-if="img">
