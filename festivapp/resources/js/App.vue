@@ -18,26 +18,22 @@
             </div>
         </nav>
 
-        <div v-if="isLoggedIn" class="sidebar menu">
-            <div>
-                <p>MENU</p>
-                <router-link active-class="active" to="/festivals" exact>
-                    <img src="" alt="">
-                    Festivals
-                </router-link>
-                <router-link active-link="active" to="/tags" exact>
-                    <img src="" alt="">
-                    Tags
-                </router-link>
-                <router-link active-class="active" to="/tops" exact>
-                    <img src="" alt="">
-                    Tops
-                </router-link>
+        <div class="appcontainer">
+            <div v-if="isLoggedIn" class="sidebar menu">
+                <div>
+                    <p>MENU</p>
+                    <router-link active-class="active" to="/dashboard" exact>
+                        Dashboard
+                    </router-link>
+                    <router-link active-class="active" to="/posts" exact>
+                        Mes posts
+                    </router-link>
+                </div>
             </div>
-        </div>
 
-        <div class="content">
-            <router-view></router-view>
+            <div :class="{ content: isLoggedIn }">
+                <router-view></router-view>
+            </div>
         </div>
     </div>
 </template>

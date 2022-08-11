@@ -74,6 +74,7 @@ h2{
     justify-content: center;
     position:sticky;
     top: 0;
+    height: 80px;
     width: 100%;
     margin: 0 auto;
     border-bottom: solid 1px #eaeaea;
@@ -133,7 +134,7 @@ h2{
 .register{
     position: relative;
     img{
-        position: absolute;
+        position: fixed;
         height: calc(100vh - 80px);
         right: 0;
     }
@@ -142,20 +143,21 @@ h2{
 .sidebar{
     padding-left: 50px;
     padding-top: 50px;
+    width: 30%;
+    margin-right: 50px;
+    flex-grow: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
     height: calc(100vh - 80px);
-    min-width: 441px;
-    position: fixed;
-    max-width: 35%;
     box-sizing: border-box;
-    background-color: $body-bg;
+    background-color: #f8fafc;
     &.menu{
-        width: 30%;
+        width: auto;
         align-items: flex-start;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+        padding: 50px 25px 0 25px;
         & > div {
-            min-width: 300px;
             display: flex;
             flex-direction: column;
             p{
@@ -168,10 +170,6 @@ h2{
                 font-weight: 500;
                 font-size: 16px;
                 padding: 10px 0;
-                &:active{
-                    background-color: #fcf4ec;
-                    color: #fff;
-                }
 
                 img{
                     width: 20px;
@@ -179,6 +177,16 @@ h2{
 
                 }
             }
+        }
+        a{
+            transition: 0.2s ease-in;
+            &:hover{
+                color: $violethover;
+            }
+        }
+        .active{
+            color: $violet;
+            font-weight: bold;        
         }
     }
     p{
@@ -229,16 +237,91 @@ h2{
             }
         }
     }
+    @media (max-width: 1100px){
+        margin-right: 25px;
+    }
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    h5{
+        width: 100%;
+        height: max-content;
+    }
+}
+
+.card{
+    display: flex;
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid $border;
+    margin-top: 30px;
+    height: 100px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    margin-right: 25px;
+    max-width: calc(50% - 28px);
+    width: calc(50% - 28px);
+
+    &:hover{
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
+    &-img{
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        border-radius: 4px;
+        img{
+            height: 100%;
+            width: auto;
+        }
+    }
+    &-detail{
+        padding: 20px;
+        width: 100%;
+        overflow: hidden;
+        .name{
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .description{
+            opacity: 0.7;
+            white-space: nowrap;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 10px;
+        }
+        .date{
+            font-size: 10px;
+            opacity: 0.5;
+        }
+    }
+    @media (max-width:1100px){
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 .content{
-    padding-left: 50px;
     padding-top: 50px;
     display: flex;
     height: calc(100vh - 80px);
-    position: fixed;
-    max-width: 65%;
     box-sizing: border-box;
     background-color: #f8fafc;
-    margin-left: 35%;
+    width: calc(80% - 50px);
+    margin-right: 25px;
+    .festlist{
+        width: 100%;
+    }
+    @media (max-width:1100px){
+        margin-right: 0;
+    }
+}
+
+.appcontainer{
+    display: flex;
 }
