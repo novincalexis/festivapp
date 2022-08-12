@@ -32,12 +32,14 @@
             }
         },
         created() {
+            let pathArray = window.location.pathname.split('/');
+            var postId = pathArray[2];
             this.$axios.get('/sanctum/csrf-cookie').then(response => {
                 this.$axios.get('/api/posts')
                 .then(response => {
-                    /*this.pathArray = window.location.pathname.split('/');
+                    this.pathArray = window.location.pathname.split('/');
                     this.postId = pathArray[2];
-                    console.log(postId);*/
+                    console.log(postId);
                     this.posts = response.data;
                 })
                 .catch(function(error) {

@@ -15,20 +15,20 @@
     </div>
 
     <div class="cards">
-        <router-link :to="`/posts/${post.id}`" v-for="(post) in filteredPosts" :key="post.id" class="card">
-            <div v-if="post.image" class="card-img">
+        <div v-for="(post) in filteredPosts" :key="post.id" class="card">
+            <router-link :to="`/posts/${post.id}`" v-if="post.image" class="card-img">
                 <img alt="post-img" width="100" v-bind:src="'/img/' +post.image">
-            </div>
-            <div class="card-detail">
+            </router-link>
+            <router-link :to="`/posts/${post.id}`" class="card-detail">
                 <p class="name">{{post.name}}</p>
                 <p class="description">{{post.description}}</p>
                 <p class="date">Posté le {{post.created_at}}</p>
-            </div>
+            </router-link>
             <div class="card-actions">
                 <router-link :to="{name:'editpost', params: {id:post.id}}"><img width="20" src="/img/icon/crayon.png" /></router-link>
                 <a @click="deletePost(post.id)"><img width="20" src="/img/icon/trash.png" /></a>
             </div>
-        </router-link>
+        </div>
     </div>
 </div>
 
