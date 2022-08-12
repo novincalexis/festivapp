@@ -3,6 +3,16 @@
 <div class="festlist">
     <h5 class="">Tout les festivals</h5>
     <input type="text" v-model="search" placeholder="Rechercher">
+    <h5>Trier par nom</h5>
+    <div>
+        <button @click="sortLowest">A-Z</button>
+        <button @click="sortHighest">Z-A</button>
+    </div>
+    <h5>Trier par date</h5>
+    <div>
+        <button @click="dateLow">Récent</button>
+        <button @click="dateHigh">Ancien</button>
+    </div>
 
     <div class="cards">
         <div v-for="(post) in filteredPosts" :key="post.id" class="card">
@@ -27,7 +37,7 @@
         data() {
             return {
                 posts: [],
-                search: []
+                search: [],
             }
         },
         created() {
@@ -42,6 +52,18 @@
             });
         },
         methods: {
+            sortLowest() {
+                this.posts.sort((a,b) => a.name > b.name ? 1 : -1);
+            },
+            sortHighest() {
+                this.posts.sort((a,b) => a.name < b.name ? 1 : -1);
+            },
+            dateHigh() {
+                this.posts.sort((a,b) => a.created_at > b.created_at ? 1 : -1);
+            },
+            dateLow() {
+                this.posts.sort((a,b) => a.created_at < b.created_at ? 1 : -1);
+            }
         },
         beforeRouteEnter(to, from, next) {
             if (!window.Laravel.isLoggedin) {
