@@ -15,7 +15,7 @@
     </div>
 
     <div class="cards">
-        <div v-for="(post) in filteredPosts" :key="post.id" class="card">
+        <router-link :to="`/posts/${post.id}`" v-for="(post) in filteredPosts" :key="post.id" class="card">
             <div v-if="post.image" class="card-img">
                 <img alt="post-img" width="100" v-bind:src="'/img/' +post.image">
             </div>
@@ -28,7 +28,7 @@
                 <router-link :to="{name:'editpost', params: {id:post.id}}"><img width="20" src="/img/icon/crayon.png" /></router-link>
                 <a @click="deletePost(post.id)"><img width="20" src="/img/icon/trash.png" /></a>
             </div>
-        </div>
+        </router-link>
     </div>
 </div>
 

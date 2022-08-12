@@ -15,7 +15,7 @@
     </div>
 
     <div class="cards">
-        <div v-for="(post) in filteredPosts" :key="post.id" class="card">
+        <router-link :to="`/posts/${post.id}`" v-for="(post) in filteredPosts" :key="post.id" class="card">
             <div v-if="post.image" class="card-img">
                 <img alt="post-img" width="100" v-bind:src="'/img/' +post.image">
             </div>
@@ -24,7 +24,7 @@
                 <p class="description">{{post.description}}</p>
                 <p class="date">Posté le {{post.created_at}}</p>
             </div>
-        </div>
+        </router-link>
     </div>
 </div>
 
