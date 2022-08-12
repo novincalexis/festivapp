@@ -1,78 +1,161 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
-
 // Reset
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
     font-family: 'Roboto', sans-serif;
     background-color: $body-bg;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
-a{
+
+a {
     color: unset;
     text-decoration: unset;
     font: unset;
 }
 
-
 // SCSS
+.container {}
 
-.container{
-}
-
-h2{
+h2 {
     font-weight: 900;
     font-size: 30px;
     margin-bottom: 20px;
     color: #000;
 }
 
-.navbar{
+.navbar {
     padding: 20px;
     display: flex;
     justify-content: center;
-    position:sticky;
+    position: sticky;
     top: 0;
     height: 80px;
     width: 100%;
@@ -82,24 +165,24 @@ h2{
     box-sizing: border-box;
     margin: 0 auto;
     max-height: 80px;
-    & > div{
+    &>div {
         max-width: 1400px;
         display: flex;
         justify-content: space-between;
         width: 100%;
     }
-    &-brand{
+    &-brand {
         display: flex;
         align-items: center;
-        b{
+        b {
             font-weight: bold;
         }
     }
-    &-nav{
+    &-nav {
         display: flex;
         justify-content: right;
         align-items: center;
-        .item{
+        .item {
             padding: 12px 20px;
             display: flex;
             align-items: center;
@@ -110,41 +193,40 @@ h2{
             font-weight: bold;
             transition: $buttontransition;
             cursor: pointer;
-            &.add{
+            &.add {
                 margin-right: 15px;
             }
-            &:hover{
+            &:hover {
                 background-color: #bbb;
             }
-            img{
+            img {
                 position: relative;
                 width: 15px;
                 margin-right: 10px;
                 filter: grayscale(1) invert(1);
             }
-            &:nth-of-type(1){
+            &:nth-of-type(1) {
                 background-color: $violet;
                 color: #fff;
-                &:hover{
+                &:hover {
                     background-color: $violethover;
                 }
             }
         }
-        
     }
 }
 
 .login,
-.register{
+.register {
     position: relative;
-    img{
+    img {
         position: fixed;
         height: calc(100vh - 80px);
         right: 0;
     }
 }
 
-.sidebar{
+.sidebar {
     padding-left: 50px;
     padding-top: 50px;
     width: 30%;
@@ -155,65 +237,63 @@ h2{
     height: calc(100vh - 80px);
     box-sizing: border-box;
     background-color: #f8fafc;
-    &.menu{
+    &.menu {
         width: auto;
         align-items: flex-start;
         background-color: #fff;
         box-shadow: 0 0 10px rgb(0 0 0 / 10%);
         padding: 50px 25px 0 25px;
-        & > div {
+        &>div {
             display: flex;
             flex-direction: column;
-            p{
+            p {
                 color: #808080;
                 margin-bottom: 15px;
             }
-            a{
+            a {
                 font-weight: bold;
                 color: #000;
                 font-weight: 500;
                 font-size: 16px;
                 padding: 10px 0;
-
-                img{
+                img {
                     width: 20px;
                     margin-right: 20px;
-
                 }
             }
         }
-        a{
+        a {
             transition: 0.2s ease-in;
-            &:hover{
+            &:hover {
                 color: $violethover;
             }
         }
-        .active{
+        .active {
             color: $violet;
-            font-weight: bold;        
+            font-weight: bold;
         }
     }
-    p{
+    p {
         font-weight: 300 !important;
         font-size: 18px;
         line-height: 30px;
         margin-bottom: 20px;
-        a{  
+        a {
             color: $violet;
-            &:hover{
+            &:hover {
                 color: $violethover;
                 text-decoration: underline;
             }
         }
     }
-    &-content{
-        .input-text{
+    &-content {
+        .input-text {
             border: 1px solid $border;
             position: relative;
             box-sizing: border-box;
             margin-bottom: 20px;
             border-radius: 4px;
-            input{
+            input {
                 width: 100%;
                 height: 100%;
                 background-color: unset;
@@ -226,7 +306,7 @@ h2{
                 box-sizing: border-box;
             }
         }
-        button{
+        button {
             outline: none;
             background-color: $violet;
             border: none;
@@ -236,26 +316,26 @@ h2{
             font-weight: bold;
             margin-bottom: 20px;
             cursor: pointer;
-            &:hover{
+            &:hover {
                 background-color: $violethover;
             }
         }
     }
-    @media (max-width: 1100px){
+    @media (max-width: 1100px) {
         margin-right: 25px;
     }
 }
 
-.cards{
+.cards {
     display: flex;
     flex-wrap: wrap;
-    h5{
+    h5 {
         width: 100%;
         height: max-content;
     }
 }
 
-.card{
+.card {
     display: flex;
     border-radius: 4px;
     background-color: #fff;
@@ -267,31 +347,30 @@ h2{
     margin-right: 25px;
     max-width: calc(50% - 28px);
     width: calc(50% - 28px);
-
-    &:hover{
-        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    &:hover {
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     }
-    &-img{
+    &-img {
         overflow: hidden;
         display: flex;
         justify-content: center;
         height: 100%;
         border-radius: 4px;
-        img{
+        img {
             height: 100%;
             width: auto;
         }
     }
-    &-detail{
+    &-detail {
         padding: 20px;
         width: 100%;
         overflow: hidden;
-        .name{
+        .name {
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 5px;
         }
-        .description{
+        .description {
             opacity: 0.7;
             white-space: nowrap;
             width: 100%;
@@ -299,29 +378,30 @@ h2{
             text-overflow: ellipsis;
             margin-bottom: 10px;
         }
-        .date{
+        .date {
             font-size: 10px;
             opacity: 0.5;
         }
     }
-    &-actions{
+    &-actions {
         padding: 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        a{
-            &:hover{
-                opacity: 0.3;;
+        a {
+            &:hover {
+                opacity: 0.3;
+                ;
             }
         }
     }
-    @media (max-width:1100px){
+    @media (max-width:1100px) {
         width: 100%;
         max-width: 100%;
     }
 }
 
-.content{
+.content {
     padding-top: 50px;
     display: flex;
     height: calc(100vh - 80px);
@@ -329,24 +409,24 @@ h2{
     background-color: #f8fafc;
     width: calc(80% - 50px);
     margin-right: 25px;
-    .festlist{
+    .festlist {
         width: 100%;
     }
-    @media (max-width:1100px){
+    @media (max-width:1100px) {
         margin-right: 0;
     }
 }
 
-.appcontainer{
+.appcontainer {
     display: flex;
 }
 
-.editcard{
+.editcard {
     max-width: 500px;
-    .back{
+    .back {
         display: flex;
         align-items: center;
-        a{
+        a {
             color: $violet;
             font-size: 20px;
             font-weight: bold;
@@ -357,30 +437,30 @@ h2{
     * {
         width: 100%;
     }
-    img{
+    img {
         width: auto !important;
     }
-    p{
+    p {
         font-weight: 300 !important;
         font-size: 18px;
         line-height: 30px;
         margin-bottom: 10px;
-        a{  
+        a {
             color: $violet;
-            &:hover{
+            &:hover {
                 color: $violethover;
                 text-decoration: underline;
             }
         }
     }
-    .input-text{
+    .input-text {
         border: 1px solid $border;
         position: relative;
         box-sizing: border-box;
         border-radius: 4px;
         background-color: #fff;
         margin-top: 20px;
-        input{
+        input {
             width: 100%;
             height: 100%;
             background-color: unset;
@@ -392,7 +472,7 @@ h2{
             font-size: 16px;
             box-sizing: border-box;
         }
-        textarea{
+        textarea {
             width: 100%;
             height: 100%;
             background-color: unset;
@@ -405,7 +485,7 @@ h2{
             box-sizing: border-box;
         }
     }
-    button{
+    button {
         outline: none;
         background-color: $violet;
         border: none;
@@ -415,17 +495,17 @@ h2{
         font-weight: bold;
         margin-top: 20px;
         cursor: pointer;
-        &:hover{
+        &:hover {
             background-color: $violethover;
         }
     }
 }
 
-.editcard{
+.editcard {
     margin-right: 25px;
     width: 100%;
 }
 
-.alert{
+.alert {
     margin-top: 15px;
 }
