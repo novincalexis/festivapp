@@ -1,16 +1,15 @@
-
-import {createWebHistory, createRouter} from "vue-router";
+import { createWebHistory, createRouter } from "vue-router";
 
 import Home from '../pages/Home';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import Posts from '../components/Posts';
+import _Posts from '../components/_Posts';
 import EditPost from '../components/EditPost';
 import AddPost from '../components/AddPost';
 
-export const routes = [
-    {
+export const routes = [{
         name: 'home',
         path: '/',
         component: Home
@@ -34,6 +33,11 @@ export const routes = [
         name: 'posts',
         path: '/posts',
         component: Posts
+    },
+    {
+        name: 'posts-detail',
+        path: '/posts/:id',
+        component: _Posts
     },
     {
         name: 'addpost',
