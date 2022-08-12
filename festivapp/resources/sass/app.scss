@@ -141,13 +141,15 @@ h2{
         position: fixed;
         height: calc(100vh - 80px);
         right: 0;
+        z-index: -1;
     }
 }
 
 .sidebar{
     padding-left: 50px;
     padding-top: 50px;
-    width: 30%;
+    padding-right: 50px;
+    width: 60%;
     margin-right: 50px;
     flex-grow: 1;
     display: flex;
@@ -253,6 +255,13 @@ h2{
         width: 100%;
         height: max-content;
     }
+    .full{
+        max-width: 100%;
+        .card-img{
+            width: 100%;
+            height: auto;
+        }
+    }
 }
 
 .card{
@@ -278,8 +287,8 @@ h2{
         height: 100%;
         border-radius: 4px;
         img{
-            height: 100%;
-            width: auto;
+            width: 100%;
+            height: auto;
         }
     }
     &-detail{
@@ -328,7 +337,9 @@ h2{
     box-sizing: border-box;
     background-color: #f8fafc;
     width: calc(80% - 50px);
-    margin-right: 25px;
+    max-height: calc(100vh - 80px);
+    overflow-y: scroll;
+    overflow-x: hidden;
     .festlist{
         width: 100%;
     }
