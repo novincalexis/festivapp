@@ -5,8 +5,8 @@
     <input type="text" v-model="search" placeholder="Rechercher">
     <h5>Trier par nom</h5>
     <div>
-        <button @click="sortLowest">A-Z</button>
-        <button @click="sortHighest">Z-A</button>
+        <label for="A-Z">A-Z</label><input id="A-Z" type="radio" name="sort" @click="sort('a')"/>
+        <label for="Z-A">Z-A</label><input id="A-Z" type="radio" name="sort" @click="sort('z')"/>
     </div>
     <h5>Trier par date</h5>
     <div>
@@ -52,11 +52,12 @@
             });
         },
         methods: {
-            sortLowest() {
-                this.posts.sort((a,b) => a.name > b.name ? 1 : -1);
-            },
-            sortHighest() {
-                this.posts.sort((a,b) => a.name < b.name ? 1 : -1);
+            sort(value) {
+                if(value == 'a'){
+                    this.posts.sort((a,b) => a.name > b.name ? 1 : -1);
+                } else {
+                    this.posts.sort((a,b) => a.name < b.name ? 1 : -1);
+                }
             },
             dateHigh() {
                 this.posts.sort((a,b) => a.created_at > b.created_at ? 1 : -1);
