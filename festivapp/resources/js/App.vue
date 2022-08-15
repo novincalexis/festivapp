@@ -1,7 +1,8 @@
 <template>
     <div class="container">
         <nav class="navbar">
-            <div>
+            <button @click="this.open = !this.open">fezfzf zefze </button>
+            <div :class="{ open: this.open }">
                 <a class="navbar-brand" href="/"><b>Festiv</b>app</a>
                 <div class="navbar-nav" v-if="isLoggedIn">
                     <a class="item add" type="button" @click="this.$router.push('/posts/add')">+ Nouveau</a>
@@ -42,6 +43,7 @@
         data() {
             return {
                 isLoggedIn: false,
+                open: false
             }
         },
         created() {
