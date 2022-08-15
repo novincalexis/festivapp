@@ -1,17 +1,85 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,8 +88,17 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -31,16 +108,20 @@ body {
   background-color: #f8fafc;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -70,12 +151,14 @@ h2 {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  height: 80px;
   width: 100%;
   margin: 0 auto;
   border-bottom: solid 1px #eaeaea;
   background-color: #fff;
   box-sizing: border-box;
   margin: 0 auto;
+  max-height: 80px;
 }
 .navbar > div {
   max-width: 1400px;
@@ -105,6 +188,10 @@ h2 {
   color: #444;
   font-weight: bold;
   transition: 0.1s ease-in;
+  cursor: pointer;
+}
+.navbar-nav .item.add {
+  margin-right: 15px;
 }
 .navbar-nav .item:hover {
   background-color: #bbb;
@@ -129,22 +216,58 @@ h2 {
 }
 .login img,
 .register img {
-  position: absolute;
-  height: calc(100vh - 81px);
+  position: fixed;
+  height: calc(100vh - 80px);
   right: 0;
 }
 
 .sidebar {
-  padding: 50px;
+  padding-left: 50px;
+  padding-top: 50px;
+  width: 30%;
+  margin-right: 50px;
+  flex-grow: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: calc(100vh - 81px);
-  min-width: 441px;
-  position: fixed;
-  max-width: 35%;
+  height: calc(100vh - 80px);
   box-sizing: border-box;
   background-color: #f8fafc;
+}
+.sidebar.menu {
+  width: auto;
+  align-items: flex-start;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 50px 25px 0 25px;
+}
+.sidebar.menu > div {
+  display: flex;
+  flex-direction: column;
+}
+.sidebar.menu > div p {
+  color: #808080;
+  margin-bottom: 15px;
+}
+.sidebar.menu > div a {
+  font-weight: bold;
+  color: #000;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 10px 0;
+}
+.sidebar.menu > div a img {
+  width: 20px;
+  margin-right: 20px;
+}
+.sidebar.menu a {
+  transition: 0.2s ease-in;
+}
+.sidebar.menu a:hover {
+  color: #4f3074;
+}
+.sidebar.menu .active {
+  color: #79589f;
+  font-weight: bold;
 }
 .sidebar p {
   font-weight: 300 !important;
@@ -187,7 +310,200 @@ h2 {
   color: white;
   font-weight: bold;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .sidebar-content button:hover {
   background-color: #4f3074;
+}
+@media (max-width: 1100px) {
+  .sidebar {
+    margin-right: 25px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cards h5 {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.card {
+  display: flex;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  margin-top: 30px;
+  height: 100px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  margin-right: 25px;
+  max-width: calc(50% - 28px);
+  width: calc(50% - 28px);
+}
+.card:hover {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.card-img {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  border-radius: 4px;
+}
+.card-img img {
+  height: 100%;
+  width: auto;
+}
+.card-detail {
+  padding: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+.card-detail .name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.card-detail .description {
+  opacity: 0.7;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+.card-detail .date {
+  font-size: 10px;
+  opacity: 0.5;
+}
+.card-actions {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card-actions a:hover {
+  opacity: 0.3;
+}
+@media (max-width: 1100px) {
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.content {
+  padding-top: 50px;
+  display: flex;
+  height: calc(100vh - 80px);
+  box-sizing: border-box;
+  background-color: #f8fafc;
+  width: calc(80% - 50px);
+  margin-right: 25px;
+}
+.content .festlist {
+  width: 100%;
+}
+@media (max-width: 1100px) {
+  .content {
+    margin-right: 0;
+  }
+}
+
+.appcontainer {
+  display: flex;
+}
+
+.editcard {
+  max-width: 500px;
+}
+.editcard .back {
+  display: flex;
+  align-items: center;
+}
+.editcard .back a {
+  color: #79589f;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 15px;
+  width: auto;
+}
+.editcard * {
+  width: 100%;
+}
+.editcard img {
+  width: auto !important;
+}
+.editcard p {
+  font-weight: 300 !important;
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+.editcard p a {
+  color: #79589f;
+}
+.editcard p a:hover {
+  color: #4f3074;
+  text-decoration: underline;
+}
+.editcard .input-text {
+  border: 1px solid #eaeaea;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-top: 20px;
+}
+.editcard .input-text input {
+  width: 100%;
+  height: 100%;
+  background-color: unset;
+  border: none;
+  top: 0;
+  left: 0;
+  padding: 15px 25px;
+  outline: none;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.editcard .input-text textarea {
+  width: 100%;
+  height: 100%;
+  background-color: unset;
+  border: none;
+  top: 0;
+  left: 0;
+  padding: 15px 25px;
+  outline: none;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.editcard button {
+  outline: none;
+  background-color: #79589f;
+  border: none;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.editcard button:hover {
+  background-color: #4f3074;
+}
+
+.editcard {
+  margin-right: 25px;
+  width: 100%;
+}
+
+.alert {
+  margin-top: 15px;
 }
