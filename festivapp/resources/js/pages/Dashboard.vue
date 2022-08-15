@@ -1,17 +1,22 @@
 <template>
 
 <div class="festlist">
-    <h5 class="">Tout les festivals</h5>
-    <input type="text" v-model="search" placeholder="Rechercher">
-    <h5>Trier par nom</h5>
-    <div>
-        <label for="A-Z">A-Z</label><input id="A-Z" type="radio" name="sort" @click="sort('a')"/>
-        <label for="Z-A">Z-A</label><input id="A-Z" type="radio" name="sort" @click="sort('z')"/>
-    </div>
-    <h5>Trier par date</h5>
-    <div>
-        <button @click="dateLow">Récent</button>
-        <button @click="dateHigh">Ancien</button>
+    <h5>Tout les festivals</h5>
+    <input class="search" type="text" v-model="search" placeholder="Rechercher">
+
+    <h5>Liste des tris</h5>
+    <div class="posts-filters">
+        <input id="A-Z" type="radio" name="sort" @click="sort('a')"/>
+        <label for="A-Z">A-Z</label>
+
+        <input id="Z-A" type="radio" name="sort" @click="sort('z')"/>
+        <label for="Z-A">Z-A</label>
+
+        <input id="recent" type="radio" name="sort" @click="sort('new')"/>
+        <label for="recent">Récent</label>
+
+        <input id="ancien" type="radio" name="sort" @click="sort('old')"/>
+        <label for="ancien">Ancien</label>
     </div>
 
     <div class="cards">
@@ -55,15 +60,13 @@
             sort(value) {
                 if(value == 'a'){
                     this.posts.sort((a,b) => a.name > b.name ? 1 : -1);
-                } else {
+                } else if (value == 'z') {
                     this.posts.sort((a,b) => a.name < b.name ? 1 : -1);
+                } else if (value == 'old') {
+                    this.posts.sort((a,b) => a.created_at < b.created_at ? 1 : -1);
+                } else if (value == 'new' ) {
+                    this.posts.sort((a,b) => a.created_at > b.created_at ? 1 : -1);
                 }
-            },
-            dateHigh() {
-                this.posts.sort((a,b) => a.created_at > b.created_at ? 1 : -1);
-            },
-            dateLow() {
-                this.posts.sort((a,b) => a.created_at < b.created_at ? 1 : -1);
             }
         },
         beforeRouteEnter(to, from, next) {
