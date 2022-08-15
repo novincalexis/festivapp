@@ -376,7 +376,7 @@ h2 {
         width: 100%;
         height: max-content;
     }
-    .full {
+    &.full {
         max-width: 100%;
         margin-top: -50px;
         .card-detail {
