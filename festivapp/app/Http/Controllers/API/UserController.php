@@ -61,6 +61,27 @@ class UserController extends Controller
 
     }
 
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return response()->json($user);
+    }
+
+    public function update($id, Request $request)
+    {
+        $user = User::find($id);
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required'
+        ]);
+
+        $input = $request->all();
+        
+        $user->update($input);
+
+        return response()->json(['success'=> 'User update successfully']);
+    }
+
 
     public function logout()
     {
