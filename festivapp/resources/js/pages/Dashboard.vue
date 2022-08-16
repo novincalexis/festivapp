@@ -1,7 +1,7 @@
 <template>
 
 <div class="festlist">
-    <h5>Tout les festivals</h5>
+    <h5>Tous les festivals</h5>
     <input class="search" type="text" v-model="search" placeholder="Rechercher">
 
     <h5>Liste des tris</h5>

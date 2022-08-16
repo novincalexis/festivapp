@@ -11,7 +11,7 @@
                     <p class="name">{{post.name}}</p>
                 </div>
                 <div class="card-detail">
-                    <p class="description">{{post.description}}</p>
+                    <p class="description detail">{{post.description}}</p>
                     <p class="date">Posté le {{post.created_at}}</p>
                 </div>
             </div>
