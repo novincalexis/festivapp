@@ -20,6 +20,7 @@ class PostsController extends Controller
             'name' => 'required',
             'description' => 'required',
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'userid' => 'required'
         ]);
 
         $input = $request->all();

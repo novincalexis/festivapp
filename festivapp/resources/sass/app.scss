@@ -142,10 +142,6 @@ a {
 }
 
 // SCSS
-.container {}
-
-.container {}
-
 h2 {
     font-weight: 900;
     font-size: 30px;
@@ -376,7 +372,7 @@ h2 {
         width: 100%;
         height: max-content;
     }
-    .full {
+    &.full {
         max-width: 100%;
         margin-top: -50px;
         .card-detail {
@@ -418,6 +414,9 @@ h2 {
     cursor: pointer;
     transition: 0.2s ease-in;
     margin-right: 25px;
+    @media (max-width: 768px) {
+        margin-right: 0;
+    }
     max-width: calc(50% - 28px);
     width: calc(50% - 28px);
     &:hover {
@@ -486,16 +485,22 @@ h2 {
     max-height: calc(100vh - 80px);
     overflow-y: scroll;
     overflow-x: hidden;
+    @media (max-width: 768px) {
+        width: 100%;
+        margin: 0 10px;
+    }
     .festlist {
         width: 100%;
     }
-    @media (max-width:1100px) {
-        margin-right: 0;
-    }
 }
+
+.festlist {}
 
 .appcontainer {
     display: flex;
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
 }
 
 .festlist {}
@@ -587,4 +592,90 @@ h2 {
 
 .alert {
     margin-top: 15px;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:768px) {
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+    .navbar {
+        &-nav {
+            font-size: 12px;
+            .item {
+                &.desktop {
+                    display: none;
+                }
+                &.mobile {
+                    background-color: $violet;
+                    color: $white;
+                }
+            }
+            .nav-link {
+                &.mobile img {
+                    width: 30px;
+                }
+            }
+        }
+    }
+    .container {
+        &.register,
+        &.login {
+            .sidebar {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                &-content {
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+    .burger-menu img {
+        width: 30px;
+        height: 100%;
+    }
+    .home {
+        gap: 30px;
+    }
+    .sidebar.menu {
+        display: block;
+        position: fixed;
+        z-index: -1;
+        opacity: 0;
+        transition: 0.3s;
+        width: 130px;
+        &.open {
+            display: block;
+            position: fixed;
+            z-index: 10;
+            opacity: 1;
+            width: 100vw;
+        }
+    }
+}
+
+@media (min-width:769px) {
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: block;
+    }
+    .navbar {
+        &-nav {
+            .item {
+                &.mobile {
+                    display: none;
+                }
+            }
+        }
+    }
 }

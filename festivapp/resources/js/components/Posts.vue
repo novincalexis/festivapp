@@ -20,20 +20,24 @@
     </div>
 
     <div class="cards">
-        <div v-for="(post) in filteredPosts" :key="post.id" class="card">
-            <router-link :to="`/posts/${post.id}`" v-if="post.image" class="card-img">
-                <img alt="post-img" width="100" v-bind:src="'/img/' +post.image">
-            </router-link>
-            <router-link :to="`/posts/${post.id}`" class="card-detail">
-                <p class="name">{{post.name}}</p>
-                <p class="description">{{post.description}}</p>
-                <p class="date">Posté le {{post.created_at}}</p>
-            </router-link>
-            <div class="card-actions">
-                <router-link :to="{name:'editpost', params: {id:post.id}}"><img width="20" src="/img/icon/crayon.png" /></router-link>
-                <a @click="deletePost(post.id)"><img width="20" src="/img/icon/trash.png" /></a>
+        <template  v-for="(post) in filteredPosts" :key="post.id">
+
+            <div v-if="post.userid == this.userid" class="card">
+                <router-link :to="`/posts/${post.id}`" v-if="post.image" class="card-img">
+                    <img alt="post-img" width="100" v-bind:src="'/img/' +post.image">
+                </router-link>
+                <router-link :to="`/posts/${post.id}`" class="card-detail">
+                    <p class="name">{{post.name}}</p>
+                    <p class="description">{{post.description}}</p>
+                    <p class="date">Posté le {{post.created_at}}</p>
+                </router-link>
+                <div class="card-actions">
+                    <router-link :to="{name:'editpost', params: {id:post.id}}"><img width="20" src="/img/icon/crayon.png" /></router-link>
+                    <a @click="deletePost(post.id)"><img width="20" src="/img/icon/trash.png" /></a>
+                </div>
             </div>
-        </div>
+                    
+        </template>
     </div>
 </div>
 </template>
@@ -45,10 +49,12 @@
                 posts: [],
                 search: [],
                 strSuccess: '',
-                strError: ''
+                strError: '',
+                userid: ''
             }
         },
         created() {
+            this.userid = window.Laravel.user.id
             this.$axios.get('/sanctum/csrf-cookie').then(response => {
                 this.$axios.get('/api/posts')
                 .then(response => {

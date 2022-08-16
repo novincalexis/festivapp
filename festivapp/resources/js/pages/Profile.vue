@@ -1,11 +1,11 @@
 <template>
-    <p>{{this.name}}{{this.email}}</p>
-    <div class="card">
+    <p>{{this.username}}{{this.useremail}}</p>
+    <div class="editcard">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title">Update Post Data</h5>
-                <div>
-                    <router-link :to="{name: 'profile'}" class="btn btn-success">Go Back</router-link>
+                <div class="back">
+                    <router-link :to="{name: 'posts'}" class="btn btn-success">&#x2190;</router-link>
+                    <h5 class="card-title">Éditez votre profil</h5>
                 </div>
             </div>
 
@@ -20,19 +20,17 @@
             </div>
 
 
-            <form @submit.prevent="updatePost" enctype="multipart/form-data">
-                <div class="form-group mb-2">
-                    <label>Name</label><span class="text-danger"> *</span>
-                    <input type="text" class="form-control" v-model="name" placeholder="Enter post name">
+            <form @submit.prevent="updateUser" enctype="multipart/form-data" method="POST">
+                <div class="form-group input-text">
+                    <input type="text" class="form-control" v-model="username" placeholder="Votre nom">
                 </div>
 
-                <div class="form-group mb-2">
-                    <label>Email</label><span class="text-danger"> *</span>
-                    <input type="text" class="form-control" v-model="email" placeholder="Enter post name">
+                <div class="form-group input-text">
+                    <input type="text" class="form-control" v-model="useremail" placeholder="Votre Email">
                 </div>
 
 
-                <button type="submit" class="btn btn-primary mt-4 mb-4"> Update Post</button>
+                <button type="submit" class="btn btn-primary mt-4 mb-4">Mettre à jour</button>
 
             </form>
             
@@ -45,32 +43,17 @@ export default{
     data() {
         return {
             id:'',
-            name: null,
-            email: null,
+            username: '',
+            useremail: '',
+            strError: '',
+            strSuccess: ''
         }
     },
 
     created() {
-        if (window.Laravel.user) {
-            this.name = window.Laravel.user.name
-        }
-        if (window.Laravel.email) {
-            this.email = window.Laravel.user.email
-        }
-        
-        this.$axios.get('/sanctum/csrf-cookie').then(response => {
-            this.$axios.get(`/api/user/update/${window.Laravel.user.id}`)
-            .then(response => {
-                this.name = response.data['name'];
-                this.email = response.data['email'];
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
-        })
     },
     methods: {
-        updatePost(e) {
+        updateUser(e) {
             this.$axios.get('/sanctum/csrf-cookie').then(response => {
                 let existingObj = this;
                 const config = {
@@ -80,16 +63,16 @@ export default{
                 }
 
                 const formData = new FormData();
-                formData.append('name', this.name);
-                formData.append('email', this.email);
+                formData.append('name', this.username);
+                formData.append('email', this.useremail);
 
-                this.$axios.post(`/api/user/update/${window.Laravel.user.id}`, formData, config)
+                this.$axios.post(`/api/user/edit/${window.Laravel.user.id}`, formData, config)
                 .then(response => {
                     existingObj.strError = "";
                     existingObj.strSuccess = response.data.success;
                 })
                 .catch(function(error) {
-                    existingObj.strSuccess ="";
+                    existingObj.strSuccess = "";
                     existingObj.strError = error.response.data.message;
                 });
             });
