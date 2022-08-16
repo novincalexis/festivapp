@@ -31,8 +31,8 @@ export const routes = [{
         component: Dashboard
     },
     {
-        name: 'profile',
-        path: '/profile',
+        name: 'user',
+        path: '/user/:id',
         component: Profile
     },
     {
