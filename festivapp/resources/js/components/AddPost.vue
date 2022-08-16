@@ -82,6 +82,7 @@ export default{
                 formData.append('name', this.name);
                 formData.append('description', this.description);
                 formData.append('file', this.img);
+                formData.append('userid', window.Laravel.user.id)
 
                 this.$axios.post('/api/posts/add', formData, config)
                 .then(response => {

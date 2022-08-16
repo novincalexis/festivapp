@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->longText('description');
-            $table->string('image')->nullable();
+        Schema::table('posts', function (Blueprint $table) {
             $table->string('userid');
-            $table->timestamps();
         });
     }
 
