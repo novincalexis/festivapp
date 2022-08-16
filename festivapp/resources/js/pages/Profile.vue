@@ -1,5 +1,4 @@
 <template>
-    <p>{{this.username}}{{this.useremail}}</p>
     <div class="editcard">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
@@ -31,7 +30,6 @@
 
 
                 <button type="submit" class="btn btn-primary mt-4 mb-4">Mettre à jour</button>
-
             </form>
             
         </div>
@@ -43,8 +41,8 @@ export default{
     data() {
         return {
             id:'',
-            username: '',
-            useremail: '',
+            username: window.Laravel.user.name,
+            useremail: window.Laravel.user.email,
             strError: '',
             strSuccess: ''
         }
@@ -69,7 +67,7 @@ export default{
                 this.$axios.post(`/api/user/edit/${window.Laravel.user.id}`, formData, config)
                 .then(response => {
                     existingObj.strError = "";
-                    existingObj.strSuccess = response.data.success;
+                    window.location.href = "/"
                 })
                 .catch(function(error) {
                     existingObj.strSuccess = "";

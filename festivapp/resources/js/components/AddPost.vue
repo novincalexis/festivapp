@@ -87,7 +87,7 @@ export default{
                 this.$axios.post('/api/posts/add', formData, config)
                 .then(response => {
                     existingObj.strError = "";
-                    existingObj.strSuccess = response.data.success;
+                    window.location.href = "/posts"
                 })
                 .catch(function(error) {
                     existingObj.strSuccess ="";
