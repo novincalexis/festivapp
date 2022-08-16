@@ -25,7 +25,7 @@ use App\Http\Controllers\API\UserController;
 Route::post('login', [UserController::class, 'login']);
 Route::post('register', [UserController::class, 'register']);
 Route::post('logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
-Route::post('user/edit/{id}', [UserController::class,'update']);
+Route::post('user/edit/{id}', [UserController::class,'update'])->middleware('auth:sanctum');
 
 Route::group(['prefix' => 'posts','middleware' => 'auth:sanctum'], function() {
     Route::get('/', [PostsController::class,'index']);
