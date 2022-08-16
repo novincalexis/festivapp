@@ -32,6 +32,9 @@
                     <router-link @click="this.open = !this.open" active-class="active" to="/posts" exact>
                         Mes posts
                     </router-link>
+                    <router-link :to="`/user/${this.userid}`" @click="this.open = !this.open" active-class="active" exact>
+                        Mon profil
+                    </router-link>
                 </div>
             </div>
 
@@ -47,12 +50,14 @@
         data() {
             return {
                 isLoggedIn: false,
-                open: false
+                open: false,
+                userid: ''
             }
         },
         created() {
             if (window.Laravel.isLoggedin) {
-                this.isLoggedIn = true
+                this.isLoggedIn = true,
+                this.userid = window.Laravel.user.id
             }
         },
         methods: {
