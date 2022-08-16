@@ -3,9 +3,9 @@
     <div class="editcard">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
-                <h5 class="card-title">Update Post Data</h5>
-                <div>
-                    <router-link :to="{name: 'dashboard'}" class="btn btn-success">Go Back</router-link>
+                <div class="back">
+                    <router-link :to="{name: 'posts'}" class="btn btn-success">&#x2190;</router-link>
+                    <h5 class="card-title">Éditez votre profil</h5>
                 </div>
             </div>
 
@@ -21,18 +21,16 @@
 
 
             <form @submit.prevent="updateUser" enctype="multipart/form-data" method="POST">
-                <div class="form-group mb-2">
-                    <label>Name</label><span class="text-danger"> *</span>
-                    <input type="text" class="form-control" v-model="username" placeholder="Enter post name">
+                <div class="form-group input-text">
+                    <input type="text" class="form-control" v-model="username" placeholder="Votre nom">
                 </div>
 
-                <div class="form-group mb-2">
-                    <label>Email</label><span class="text-danger"> *</span>
-                    <input type="text" class="form-control" v-model="useremail" placeholder="Enter post name">
+                <div class="form-group input-text">
+                    <input type="text" class="form-control" v-model="useremail" placeholder="Votre Email">
                 </div>
 
 
-                <button type="submit" class="btn btn-primary mt-4 mb-4"> Update Post</button>
+                <button type="submit" class="btn btn-primary mt-4 mb-4">Mettre à jour</button>
 
             </form>
             

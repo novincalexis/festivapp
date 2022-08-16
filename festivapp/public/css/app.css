@@ -374,29 +374,29 @@ h2 {
   height: -moz-max-content;
   height: max-content;
 }
-.cards .full {
+.cards.full {
   max-width: 100%;
   margin-top: -50px;
 }
-.cards .full .card-detail {
+.cards.full .card-detail {
   padding: 0;
   margin-top: 30px;
 }
-.cards .full .card-img {
+.cards.full .card-img {
   width: 100%;
   height: auto;
   max-width: unset !important;
   max-height: 300px;
   position: relative;
 }
-.cards .full .card-img:before {
+.cards.full .card-img:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.cards .full .card-img .name {
+.cards.full .card-img .name {
   position: absolute;
   font-weight: bold;
   color: #fff;
@@ -417,6 +417,11 @@ h2 {
   margin-right: 25px;
   max-width: calc(50% - 28px);
   width: calc(50% - 28px);
+}
+@media (max-width: 768px) {
+  .card {
+    margin-right: 0;
+  }
 }
 .card:hover {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -483,17 +488,23 @@ h2 {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+@media (max-width: 768px) {
+  .content {
+    width: 100%;
+    margin: 0 10px;
+  }
+}
 .content .festlist {
   width: 100%;
-}
-@media (max-width: 1100px) {
-  .content {
-    margin-right: 0;
-  }
 }
 
 .appcontainer {
   display: flex;
+}
+@media (max-width: 768px) {
+  .appcontainer {
+    justify-content: center;
+  }
 }
 
 .editcard {
@@ -583,4 +594,80 @@ h2 {
 
 .alert {
   margin-top: 15px;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .navbar-nav {
+    font-size: 12px;
+  }
+  .navbar-nav .item.desktop {
+    display: none;
+  }
+  .navbar-nav .item.mobile {
+    background-color: #79589f;
+    color: #fff;
+  }
+  .navbar-nav .nav-link.mobile img {
+    width: 30px;
+  }
+
+  .container.register .sidebar, .container.login .sidebar {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .container.register .sidebar-content, .container.login .sidebar-content {
+    margin: 0 10px;
+  }
+
+  .burger-menu img {
+    width: 30px;
+    height: 100%;
+  }
+
+  .home {
+    gap: 30px;
+  }
+
+  .sidebar.menu {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s;
+    width: 130px;
+  }
+  .sidebar.menu.open {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    opacity: 1;
+    width: 100vw;
+  }
+}
+@media (min-width: 769px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .navbar-nav .item.mobile {
+    display: none;
+  }
 }
