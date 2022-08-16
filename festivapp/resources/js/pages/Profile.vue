@@ -1,6 +1,6 @@
 <template>
     <p>{{this.username}}{{this.useremail}}</p>
-    <div class="card">
+    <div class="editcard">
         <div class="card-body">
             <div class="d-flex justify-content-between pb-2 mb-2">
                 <h5 class="card-title">Update Post Data</h5>
